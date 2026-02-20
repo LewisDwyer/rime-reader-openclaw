@@ -41,6 +41,11 @@ export RIME_API_KEY=your_key_here
 
 **4. Add a trigger to your `~/.openclaw/workspace/SOUL.md`:**
 
+This step is required. OpenClaw skills handle technical execution, but
+conversational behaviour (what to ask, in what order, which tools to use) must
+be declared in SOUL.md to take effect on every message. Without this, the bot
+will ignore the skill's workflow.
+
 ```markdown
 ## Document Reading
 
