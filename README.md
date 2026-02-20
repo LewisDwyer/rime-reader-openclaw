@@ -39,7 +39,11 @@ export RIME_API_KEY=your_key_here
 }
 ```
 
-**4. Restart your OpenClaw gateway.**
+**4. Restart your OpenClaw gateway:**
+
+```bash
+openclaw gateway restart
+```
 
 ## Usage
 
@@ -73,13 +77,15 @@ Default: `atrium`. Recommended picks:
 
 ## How it works
 
-- **Verbatim / Summary** — `rime_reader.py` splits the text into
-  sentence-aligned chunks, synthesizes each with the Rime API, stitches the
-  PCM audio, and encodes to OGG Opus via ffmpeg.
-- **Podcast** — `rime_tts.py` synthesizes each host's lines separately using
-  `--segments` and stitches them into a single voice note.
+`rime.py` is a single script with three modes:
+
+- **Verbatim / Summary** — splits the text into sentence-aligned chunks,
+  synthesizes each with the Rime API, stitches the PCM audio, and encodes to
+  OGG Opus via ffmpeg.
+- **Podcast** — synthesizes each host's lines separately using `--segments`
+  and stitches them into a single voice note.
 - All text normalization (markup removal, symbol replacement, prosody tuning)
-  is done by the LLM before the scripts are called.
+  is done by the LLM before the script is called.
 
 ## Comparing Rime vs OpenAI TTS
 
