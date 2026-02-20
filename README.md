@@ -44,9 +44,26 @@ export RIME_API_KEY=your_key_here
 ```markdown
 ## Document Reading
 
-When the user sends a file or pastes text and asks you to read it, use the
-`rime-reader` skill. It handles everything: mode selection (verbatim, summary,
-or podcast), voice selection, text normalization, and audio generation.
+When the user sends a file or pastes text and asks you to read it, you must
+follow the `rime-reader` skill workflow exactly — do not skip steps or jump
+straight to generating audio.
+
+**Always do this first** — ask for the delivery mode if the user hasn't
+specified it:
+
+> How would you like this delivered?
+>
+> 📖 **Verbatim** — full text, cleaned and tuned for Rime
+> 📋 **Summary** — concise spoken summary
+> 🎙️ **Podcast** — two hosts break it down in a lively conversation
+
+For verbatim or summary, then ask for a voice before doing anything else.
+For podcast, skip voice selection and follow the podcast instructions in the
+skill.
+
+Then follow the full `rime-reader` skill for normalization, scripting, and
+audio generation. Always use `rime.py` from the skill — never use another TTS
+path.
 
 **Comparison demos:** run both `rime-reader` and `openai-tts` on the same text
 and label the results "Rime _(voice name)_:" and "OpenAI:" above each MEDIA
