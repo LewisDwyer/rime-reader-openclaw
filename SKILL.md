@@ -177,7 +177,7 @@ print(p)
 
 Then run:
 
-    python3 {baseDir}/rime_reader.py /path/to/file.txt --voice <chosen>
+    python3 {baseDir}/rime.py /path/to/file.txt --voice <chosen>
 
 The script prints the path to the generated `.ogg` file.
 
@@ -205,7 +205,7 @@ What makes a good podcast script:
 
 Build the script as a `--segments` JSON array and run:
 
-    python3 {baseDir}/rime_tts.py --segments '[
+    python3 {baseDir}/rime.py --segments '[
       {"voice": "atrium", "text": "..."},
       {"voice": "lyra",   "text": "..."},
       ...
@@ -218,26 +218,18 @@ The script prints the path to the generated `.ogg` file.
     MEDIA: /path/to/reading.ogg
     [[audio_as_voice]]
 
-## Script options
-
-### rime_reader.py (verbatim / summary)
+## Script options (rime.py)
 
 - `--voice VOICE` — Rime voice ID (default: `atrium`). Always pass the voice
-  the user selected.
+  the user selected. In podcast mode, set per segment in the JSON.
 - `--speed SPEED` — Speed multiplier (default: `1.0`)
 - `--lang LANG` — Language code for non-English text (e.g. `fra`, `spa`)
-- `--pause SECS` — Silence between chunks in seconds (default: `0.3`)
+- `--pause SECS` — Silence between chunks or segments in seconds
+  (default: `0.3`; use `0.4` for podcast mode to give speaker turns more room)
+- `--segments JSON` — Multi-voice JSON array (podcast mode)
+- `--text TEXT` — Inline text to speak (single short utterance)
 
-### rime_tts.py (podcast / multi-voice)
-
-- `--segments JSON` — JSON array of `{"voice", "text"}` objects (required)
-- `--pause SECS` — Pause between segments in seconds (default: `0.4`)
-- `--voice VOICE` — Default voice if not specified per segment
-- `--speed SPEED` — Default speed multiplier (default: `1.0`)
-- `--lang LANG` — Default language code
-
-**Model:** always use `arcana` (the default). Do not pass `--model` to either
-script.
+**Model:** always `arcana`. There is no `--model` flag.
 
 ## Comparison mode
 
