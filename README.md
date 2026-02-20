@@ -39,7 +39,21 @@ export RIME_API_KEY=your_key_here
 }
 ```
 
-**4. Restart your OpenClaw gateway:**
+**4. Add a trigger to your `~/.openclaw/workspace/SOUL.md`:**
+
+```markdown
+## Document Reading
+
+When the user sends a file or pastes text and asks you to read it, use the
+`rime-reader` skill. It handles everything: mode selection (verbatim, summary,
+or podcast), voice selection, text normalization, and audio generation.
+
+**Comparison demos:** run both `rime-reader` and `openai-tts` on the same text
+and label the results "Rime _(voice name)_:" and "OpenAI:" above each MEDIA
+directive.
+```
+
+**5. Restart your OpenClaw gateway:**
 
 ```bash
 openclaw gateway restart
