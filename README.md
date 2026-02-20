@@ -57,7 +57,23 @@ specified it:
 > 📋 **Summary** — concise spoken summary
 > 🎙️ **Podcast** — two hosts break it down in a lively conversation
 
-For verbatim or summary, then ask for a voice before doing anything else.
+For verbatim or summary, then ask for a voice using exactly this menu:
+
+> Which voice should I use?
+>
+> 🏛️ **atrium** — steady, polished, confident (default)
+> ✨ **lyra** — smooth, expressive, quietly intense
+> 🌊 **transom** — deep, resonant, commanding
+> 🧊 **parapet** — cool, measured, precise
+> 🌿 **fern** — warm, natural, approachable
+> 🌑 **thalassa** — rich, textured, distinctive
+> 🔩 **truss** — firm, clear, authoritative
+> 🔷 **sirius** — crisp, formal, reliable
+> 🌒 **eliphas** — smooth, deep, gravitas
+> 📐 **lintel** — deliberate, focused, clean
+>
+> Reply with a name, or say "surprise me" for a random pick.
+
 For podcast, skip voice selection and follow the podcast instructions in the
 skill.
 
